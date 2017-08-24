@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer name="duration_dialog_anim">300</integer>
+
+    <style name="TabIndicator" parent="Widget.Design.TabLayout">
+        <!--tab的最大的宽度-->
+        <!--<item name="tabMaxWidth">@dimen/design_tab_max_width</item>-->
+        <!--tab指示标的颜色-->
+        <item name="tabIndicatorColor">@color/white</item>
+        <!--tab 指示标的高度-->
+        <item name="tabIndicatorHeight">2dp</item>
+        <!--tab字体的样式-->
+        <item name="tabTextAppearance">@style/TabTextStyle</item>
+        <!--tab 选中时的颜色-->
+        <item name="tabSelectedTextColor">@color/white</item>
+    </style>
+
+    <style name="TabTextStyle" parent="TextAppearance.Design.Tab">
+        <!--Tab字体的大小-->
+        <item name="android:textSize">@dimen/font_normal</item>
+        <!--Tab字体的默认的颜色-->
+        <item name="android:textColor">@color/gray</item>
+        <!--Tab字体是否为大写-->
+        <item name="textAllCaps">false</item>
+    </style>
+
+    <style name="Toolbar.titleTextAppearance" parent="TextAppearance.Widget.AppCompat.Toolbar.Title">
+        <item name="android:textColor">#fff</item>
+        <item name="android:textSize">18sp</item>
+    </style>
+    <!-- 距左右15dp的按钮 -->
+    <style name="style_btn_margin_lr_15_corners5_blue" parent="@style/Widget.AppCompat.Button.Borderless">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">40dp</item>
+        <item name="android:layout_marginLeft">@dimen/spacing_normal</item>
+        <item name="android:layout_marginRight">@dimen/spacing_normal</item>
+        <item name="android:background">@drawable/bg_border_corners5_light_blue</item>
+        <item name="android:textSize">@dimen/font_normal</item>
+        <item name="android:textColor">@color/color_btn_text</item>
+    </style>
+    <!-- 中等大小的按钮 -->
+    <style name="style_btn_middle_corners5_blue" parent="@style/Widget.AppCompat.Button.Borderless">
+        <item name="android:layout_width">125dp</item>
+        <item name="android:layout_height">40dp</item>
+        <item name="android:background">@drawable/bg_border_corners5_light_blue</item>
+        <item name="android:textSize">@dimen/font_normal</item>
+        <item name="android:textColor">@color/color_btn_text</item>
+    </style>
+</resources>
