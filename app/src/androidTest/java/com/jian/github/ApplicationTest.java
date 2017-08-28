@@ -1,4 +1,4 @@
-package com.ouyangzn.github;
+package com.jian.github;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;

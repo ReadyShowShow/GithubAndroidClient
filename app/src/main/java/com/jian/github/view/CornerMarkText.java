@@ -12,7 +12,7 @@ import android.util.AttributeSet;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.ouyangzn.github.R;
+import com.jian.github.R;
 import com.jian.github.utils.ScreenUtils;
 
 /**

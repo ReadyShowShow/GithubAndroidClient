@@ -22,7 +22,7 @@ import com.jian.github.utils.DialogUtils;
 import com.jian.github.utils.ScreenUtils;
 import com.jian.github.utils.UiUtils;
 import com.jian.github.view.InputEdit;
-import com.ouyangzn.github.R;
+import com.jian.github.R;
 import com.jian.github.module.stars.StarsContract.IStarsPresenter;
 import com.jian.github.module.stars.StarsContract.IStarsView;
 import com.ouyangzn.recyclerview.BaseRecyclerViewAdapter;

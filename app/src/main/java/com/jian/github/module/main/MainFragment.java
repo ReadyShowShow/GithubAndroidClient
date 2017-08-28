@@ -23,7 +23,7 @@ import com.jian.github.utils.DialogUtils;
 import com.jian.github.utils.Log;
 import com.jian.github.utils.ScreenUtils;
 import com.jian.github.utils.UiUtils;
-import com.ouyangzn.github.R;
+import com.jian.github.R;
 import com.ouyangzn.recyclerview.BaseRecyclerViewAdapter;
 import com.trello.rxlifecycle.android.FragmentEvent;
 

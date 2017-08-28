@@ -6,7 +6,7 @@ import android.widget.ImageView;
 import com.jian.github.bean.apibean.Repository;
 import com.jian.github.utils.ImageLoader;
 import com.jian.github.view.CornerMarkText;
-import com.ouyangzn.github.R;
+import com.jian.github.R;
 import com.ouyangzn.recyclerview.BaseRecyclerViewAdapter;
 import com.ouyangzn.recyclerview.BaseViewHolder;
 

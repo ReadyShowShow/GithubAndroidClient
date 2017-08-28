@@ -3,7 +3,7 @@ package com.jian.github.network;
 import android.text.TextUtils;
 
 import com.jian.github.App;
-import com.ouyangzn.github.BuildConfig;
+import com.jian.github.BuildConfig;
 
 import java.security.KeyManagementException;
 import java.security.NoSuchAlgorithmException;

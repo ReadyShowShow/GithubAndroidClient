@@ -3,133 +3,130 @@ apply plugin: 'android-apt'
 apply plugin: 'me.tatarka.retrolambda'
 apply plugin: 'org.greenrobot.greendao' // apply plugin
 
-// 跟下面的versionName保持一致，最后一位用于紧急修复版本
-def versionMajor = 1
-def versionMinor = 1
-def versionPatch = 0
-def versionHotfix = 0
 android {
-  compileSdkVersion rootProject.ext.compileSdkVersion
-  buildToolsVersion rootProject.ext.buildToolsVersion
+    compileSdkVersion rootProject.ext.compileSdkVersion
+    buildToolsVersion rootProject.ext.buildToolsVersion
 
-  defaultConfig {
-    applicationId "com.ouyangzn.github"
-    minSdkVersion rootProject.ext.minSdkVersion
-    targetSdkVersion rootProject.ext.targetSdkVersion
-    versionCode versionMajor * 1000000 + versionMinor * 10000 + versionPatch * 100 + versionHotfix
-    versionName "1.1.0"
+    signingConfigs {
+        myconfig {
+            try {
+                Properties properties = new Properties()
+                properties.load(project.rootProject.file('local.properties').newDataInputStream())
 
-  }
-  //  Properties properties = new Properties()
-  //  try {
-  //    properties.load(project.rootProject.file('local.properties').newDataInputStream())
-  //  } catch (ex) {
-  //    println "no file \"local.properties\""
-  //  }
-  signingConfigs {
-    release {
-      try {
-        Properties properties = new Properties()
-        properties.load(project.rootProject.file('local.properties').newDataInputStream())
-
-        storeFile file("../appkey.jks")
-        storePassword properties.getProperty("keystore.password")
-        keyAlias properties.getProperty("key.alias")
-        keyPassword properties.getProperty("key.password")
-      } catch (ex) {
-        //        throw new InvalidUserDataException(
-        //            "You should define keystore.password、key.alias and key.password in local.properties.")
-        println "You should define keystore.password、key.alias and key.password in local.properties."
-      }
+                storeFile file("../../appkey.jks")
+                storePassword properties.getProperty("keystore.password")
+                keyAlias properties.getProperty("key.alias")
+                keyPassword properties.getProperty("key.password")
+                v2SigningEnabled false
+            } catch (ex) {
+                throw new InvalidUserDataException(
+                        "You should define keystore.password、key.alias and key.password in local.properties.")
+//                println "You should define keystore.password、key.alias and key.password in local.properties."
+            }
+        }
     }
-  }
 
-  buildTypes {
-    debug {
-      minifyEnabled false
-      shrinkResources false
-      proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
-      ndk {
-        abiFilters "armeabi-v7a"
-      }
+    defaultConfig {
+        applicationId "com.jian.github"
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
+        versionCode 10
+        versionName "1.0.0"
+        signingConfig signingConfigs.myconfig
     }
-    //        release_signed {
-    //          minifyEnabled true
-    //          shrinkResources true
-    //          proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
-    //          signingConfig signingConfigs.release
-    //          ndk {
-    //            abiFilters "armeabi-v7a"
-    //          }
-    //        }
-  }
-  compileOptions {
-    sourceCompatibility JavaVersion.VERSION_1_8
-    targetCompatibility JavaVersion.VERSION_1_8
-  }
-  lintOptions {
-    checkReleaseBuilds true
-    abortOnError false
-    disable 'InvalidPackage'
-    lintConfig file('lint.xml')
-  }
+    //  Properties properties = new Properties()
+    //  try {
+    //    properties.load(project.rootProject.file('local.properties').newDataInputStream())
+    //  } catch (ex) {
+    //    println "no file \"local.properties\""
+    //  }
+
+    buildTypes {
+        debug {
+            minifyEnabled false
+            shrinkResources false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            ndk {
+                abiFilters "armeabi-v7a"
+            }
+        }
+        //        release_signed {
+        //          minifyEnabled true
+        //          shrinkResources true
+        //          proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        //          signingConfig signingConfigs.release
+        //          ndk {
+        //            abiFilters "armeabi-v7a"
+        //          }
+        //        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    lintOptions {
+        checkReleaseBuilds true
+        abortOnError false
+        disable 'InvalidPackage'
+        lintConfig file('lint.xml')
+    }
 }
 
 greendao {
-  schemaVersion 1
-  daoPackage "com.ouyangzn.github.dao"
+    schemaVersion 1
+    daoPackage "com.jian.github.dao"
 }
 apt {
-  arguments {
-    eventBusIndex "com.ouyangzn.github.event.EventBusIndex"
-  }
+    arguments {
+        eventBusIndex "com.jian.github.event.EventBusIndex"
+    }
 }
 
 dependencies {
-  compile fileTree(include: ['*.jar'], dir: 'libs')
-  //
-  compile "com.android.support:appcompat-v7:${APPCOMPAT_V7_VERSION}"
-  compile "com.android.support:design:${DESIGN_VERSION}"
-  compile "com.android.support:cardview-v7:${CARDVIEW_VERSION}"
-  // RecyclerViewAdapter
-  compile "com.ouyangzn.lib:BaseRecyclerViewAdapter:${BASE_RECYCLER_ADAPTER_VERSION}"
-  // 日期选择
-  compile "com.ouyangzn.lib:PickView:${PICK_VIEW_VERSION}"
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    //
+    compile "com.android.support:appcompat-v7:${APPCOMPAT_V7_VERSION}"
+    compile "com.android.support:design:${DESIGN_VERSION}"
+    compile "com.android.support:cardview-v7:${CARDVIEW_VERSION}"
+    // RecyclerViewAdapter
+    compile "com.ouyangzn.lib:BaseRecyclerViewAdapter:${BASE_RECYCLER_ADAPTER_VERSION}"
+    // 日期选择
+    compile "com.ouyangzn.lib:PickView:${PICK_VIEW_VERSION}"
 
-  // rxJava系列
-  compile "io.reactivex:rxandroid:${RXANDROID_VERSION}"
-  compile "io.reactivex:rxjava:${RXJAVA_VERSION}"
-  compile "com.jakewharton.rxbinding:rxbinding:${RXBINDING_VERSION}"
-  compile "com.jakewharton.rxbinding:rxbinding-recyclerview-v7:${RXBINDING_SUPPORT_VERSION}"
-  compile "com.jakewharton.rxbinding:rxbinding-support-v4:${RXBINDING_SUPPORT_VERSION}"
-  // If you want to bind to Android-specific lifecycles
-  compile "com.trello:rxlifecycle-android:${RXLIFECYCLE_VERSION}"
-  // If you want pre-written Activities and Fragments you can subclass as providers
-  compile "com.trello:rxlifecycle-components:${RXLIFECYCLE_VERSION}"
-  // If you want to use Navi for providers
-  compile "com.trello:rxlifecycle-navi:${RXLIFECYCLE_VERSION}"
+    // rxJava系列
+    compile "io.reactivex:rxandroid:${RXANDROID_VERSION}"
+    compile "io.reactivex:rxjava:${RXJAVA_VERSION}"
+    compile "com.jakewharton.rxbinding:rxbinding:${RXBINDING_VERSION}"
+    compile "com.jakewharton.rxbinding:rxbinding-recyclerview-v7:${RXBINDING_SUPPORT_VERSION}"
+    compile "com.jakewharton.rxbinding:rxbinding-support-v4:${RXBINDING_SUPPORT_VERSION}"
+    // If you want to bind to Android-specific lifecycles
+    compile "com.trello:rxlifecycle-android:${RXLIFECYCLE_VERSION}"
+    // If you want pre-written Activities and Fragments you can subclass as providers
+    compile "com.trello:rxlifecycle-components:${RXLIFECYCLE_VERSION}"
+    // If you want to use Navi for providers
+    compile "com.trello:rxlifecycle-navi:${RXLIFECYCLE_VERSION}"
 
-  // retrofit系列
-  compile "com.squareup.retrofit2:retrofit:${RETROFIT_VERSION}"
-  compile "com.squareup.retrofit2:converter-gson:${CONVERTER_GSON_VERSION}"
-  compile "com.squareup.retrofit2:adapter-rxjava:${ADAPTER_RXJAVA_VERSION}"
-  // okhttp系列
-  compile "com.squareup.okhttp3:okhttp:${OKHTTP_VERSION}"
-  compile "com.squareup.okhttp3:logging-interceptor:${OKHTTP_VERSION}"
-  // glide系列
-  compile "com.github.bumptech.glide:glide:${GLIDE_VERSION}"
-  compile "jp.wasabeef:glide-transformations:${GLIDE_TRANSFORMATIONS_VERSION}"
-  // butterknife系列
-  compile "com.jakewharton:butterknife:${BUTTERKNIFE_VERSION}"
-  apt "com.jakewharton:butterknife-compiler:${BUTTERKNIFE_COMPILER_VERSION}"
-  // greendao
-  compile "org.greenrobot:greendao:${GREENDAO_VERSION}"
-  // eventBus
-  compile "org.greenrobot:eventbus:${EVENT_BUS_VERSION}"
-  apt "org.greenrobot:eventbus-annotation-processor:${EVENTBUS_ANNOTATION_PROCESSOR_VERSION}"
+    // retrofit系列
+    compile "com.squareup.retrofit2:retrofit:${RETROFIT_VERSION}"
+    compile "com.squareup.retrofit2:converter-gson:${CONVERTER_GSON_VERSION}"
+    compile "com.squareup.retrofit2:adapter-rxjava:${ADAPTER_RXJAVA_VERSION}"
+    // okhttp系列
+    compile "com.squareup.okhttp3:okhttp:${OKHTTP_VERSION}"
+    compile "com.squareup.okhttp3:logging-interceptor:${OKHTTP_VERSION}"
+    // glide系列
+    compile "com.github.bumptech.glide:glide:${GLIDE_VERSION}"
+    compile "jp.wasabeef:glide-transformations:${GLIDE_TRANSFORMATIONS_VERSION}"
+    // butterknife系列
+    compile "com.jakewharton:butterknife:${BUTTERKNIFE_VERSION}"
+    apt "com.jakewharton:butterknife-compiler:${BUTTERKNIFE_COMPILER_VERSION}"
+    // greendao
+    compile "org.greenrobot:greendao:${GREENDAO_VERSION}"
+    // eventBus
+    compile "org.greenrobot:eventbus:${EVENT_BUS_VERSION}"
+    apt "org.greenrobot:eventbus-annotation-processor:${EVENTBUS_ANNOTATION_PROCESSOR_VERSION}"
 
-  // chrome调试与realm的调试
-  debugCompile "com.facebook.stetho:stetho:${STETHO_VERSION}"
-  debugCompile "com.facebook.stetho:stetho-okhttp3:${STETHO_OKHTTP_VERSION}"
-  testCompile 'junit:junit:4.12'
+    // chrome调试与realm的调试
+    debugCompile "com.facebook.stetho:stetho:${STETHO_VERSION}"
+    debugCompile "com.facebook.stetho:stetho-okhttp3:${STETHO_OKHTTP_VERSION}"
+    testCompile 'junit:junit:4.12'
 }

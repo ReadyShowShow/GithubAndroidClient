@@ -15,7 +15,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.ouyangzn.github.R;
+import com.jian.github.R;
 import com.ouyangzn.recyclerview.BaseRecyclerViewAdapter;
 
 /**

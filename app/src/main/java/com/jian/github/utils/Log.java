@@ -1,6 +1,6 @@
 package com.jian.github.utils;
 
-import com.ouyangzn.github.BuildConfig;
+import com.jian.github.BuildConfig;
 
 /**
  * <p>日志类,用于代替android提供的Log,以达到更好的控制日志打印的目的

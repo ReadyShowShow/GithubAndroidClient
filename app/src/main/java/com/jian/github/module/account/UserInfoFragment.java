@@ -12,7 +12,7 @@ import butterknife.OnClick;
 import butterknife.OnLongClick;
 
 import com.jian.github.App;
-import com.ouyangzn.github.R;
+import com.jian.github.R;
 import com.jian.github.base.BaseFragment;
 import com.jian.github.base.BasePresenter;
 import com.jian.github.bean.apibean.User;

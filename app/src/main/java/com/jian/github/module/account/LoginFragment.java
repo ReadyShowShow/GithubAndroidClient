@@ -17,7 +17,7 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 import com.jian.github.App;
-import com.ouyangzn.github.R;
+import com.jian.github.R;
 import com.jian.github.base.BaseFragment;
 import com.jian.github.base.BasePresenter;
 import com.jian.github.data.remote.LoginDataSource;

@@ -1,4 +1,4 @@
-package com.ouyangzn.github;
+package com.jian.github;
 
 import org.junit.Test;
 

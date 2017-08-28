@@ -24,7 +24,7 @@ import com.jian.github.utils.Actions;
 import com.jian.github.utils.CommonUtils;
 import com.jian.github.utils.ImageLoader;
 import com.jian.github.App;
-import com.ouyangzn.github.R;
+import com.jian.github.R;
 import com.jian.github.base.BaseActivity;
 import com.jian.github.event.Event;
 import com.jian.github.module.common.MainPagerAdapter;

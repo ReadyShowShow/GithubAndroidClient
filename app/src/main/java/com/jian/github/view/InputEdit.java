@@ -23,7 +23,7 @@ import butterknife.ButterKnife;
 import com.jakewharton.rxbinding.widget.RxTextView;
 import com.jakewharton.rxbinding.widget.TextViewEditorActionEvent;
 import com.jian.github.utils.ScreenUtils;
-import com.ouyangzn.github.R;
+import com.jian.github.R;
 
 import rx.functions.Action1;
 

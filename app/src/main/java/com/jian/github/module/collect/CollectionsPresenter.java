@@ -6,7 +6,7 @@ import com.jian.github.data.local.CollectLocalDataSourceSource;
 import com.jian.github.utils.Log;
 import com.jian.github.utils.RxJavaUtils;
 import com.jian.github.App;
-import com.ouyangzn.github.R;
+import com.jian.github.R;
 import com.trello.rxlifecycle.LifecycleProvider;
 import com.trello.rxlifecycle.android.FragmentEvent;
 

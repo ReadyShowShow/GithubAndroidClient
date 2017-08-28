@@ -11,7 +11,7 @@ import android.widget.Toast;
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
 
-import com.ouyangzn.github.R;
+import com.jian.github.R;
 import com.trello.navi.component.support.NaviFragment;
 import com.trello.rxlifecycle.LifecycleProvider;
 import com.trello.rxlifecycle.android.FragmentEvent;

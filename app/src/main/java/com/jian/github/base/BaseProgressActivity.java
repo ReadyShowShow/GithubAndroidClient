@@ -10,7 +10,7 @@ import android.widget.Toast;
 import butterknife.ButterKnife;
 
 import com.jian.github.App;
-import com.ouyangzn.github.R;
+import com.jian.github.R;
 
 /**
  * jian

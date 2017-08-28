@@ -20,7 +20,7 @@ import com.jian.github.utils.Actions;
 import com.jian.github.utils.CommonUtils;
 import com.jian.github.utils.DialogUtils;
 import com.jian.github.utils.ScreenUtils;
-import com.ouyangzn.github.R;
+import com.jian.github.R;
 import com.jian.github.module.common.CollectAdapter;
 import com.jian.github.utils.UiUtils;
 import com.jian.github.view.InputEdit;

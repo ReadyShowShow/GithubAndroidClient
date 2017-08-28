@@ -4,7 +4,7 @@ import android.app.ProgressDialog;
 import android.content.Context;
 import android.support.v7.app.AlertDialog;
 
-import com.ouyangzn.github.R;
+import com.jian.github.R;
 
 /**
  * dialog工具类

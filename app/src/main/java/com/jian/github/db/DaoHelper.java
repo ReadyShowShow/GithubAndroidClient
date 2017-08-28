@@ -4,8 +4,8 @@ import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 
 import com.jian.github.App;
-import com.ouyangzn.github.dao.DaoMaster;
-import com.ouyangzn.github.dao.DaoSession;
+import com.jian.github.dao.DaoMaster;
+import com.jian.github.dao.DaoSession;
 
 import org.greenrobot.greendao.database.Database;
 

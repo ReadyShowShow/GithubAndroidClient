@@ -14,9 +14,8 @@ import com.jian.github.json.DoubleAdapter;
 import com.jian.github.json.IntegerAdapter;
 import com.jian.github.json.LongAdapter;
 import com.jian.github.utils.ImageLoader;
-import com.ouyangzn.github.BuildConfig;
+import com.jian.github.BuildConfig;
 import com.jian.github.db.DaoHelper;
-import com.ouyangzn.github.event.EventBusIndex;
 import com.jian.github.utils.SpUtils;
 
 import org.greenrobot.eventbus.EventBus;
@@ -111,7 +110,7 @@ public class App extends Application {
         ImageLoader.init(sApp);
         DaoHelper.initDao(sApp);
         EventBus.builder()
-                .addIndex(new EventBusIndex())
+//                .addIndex(new EventBusIndex())
                 .logNoSubscriberMessages(BuildConfig.DEBUG)
                 .throwSubscriberException(BuildConfig.DEBUG)
                 .installDefaultEventBus();

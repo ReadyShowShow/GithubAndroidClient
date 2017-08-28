@@ -1,8 +1,8 @@
 package com.jian.github.data.local;
 
 import com.jian.github.bean.localbean.CollectedRepo;
-import com.ouyangzn.github.dao.CollectedRepoDao;
-import com.ouyangzn.github.dao.DaoSession;
+import com.jian.github.dao.CollectedRepoDao;
+import com.jian.github.dao.DaoSession;
 import com.jian.github.data.ICollectDataSource;
 import com.jian.github.db.DaoHelper;
 import com.jian.github.utils.Log;

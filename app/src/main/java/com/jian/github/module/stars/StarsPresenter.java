@@ -6,7 +6,7 @@ import com.jian.github.data.local.CollectLocalDataSourceSource;
 import com.jian.github.utils.CommonUtils;
 import com.jian.github.utils.Log;
 import com.jian.github.App;
-import com.ouyangzn.github.R;
+import com.jian.github.R;
 import com.jian.github.bean.localbean.CollectedRepo;
 import com.jian.github.data.ICollectDataSource;
 import com.jian.github.data.remote.StarsRemoteDataSource;

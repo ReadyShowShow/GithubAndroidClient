@@ -10,7 +10,7 @@
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="action_settings">Settings</string>
     <string name="username_github">GitHub Username</string>
-    <string name="password_github">GitHub password</string>
+    <string name="password_github">GitHub Password</string>
     <string name="login">login</string>
     <string name="confirm">Confirm</string>
     <string name="cancel">Cancel</string>
@@ -50,6 +50,8 @@
     <string name="error_network_error">Network error, retry please</string>
     <string name="error_need_login">Need Login</string>
     <string name="error_login_failure">Login failure, please check you username or password</string>
+    <string name="error_password_null">not available password</string>
+    <string name="loading_more_failure">loading failure</string>
 
     <string name="word_favorite">Favorite</string>
     <string name="word_unfavorite">Unfavorite</string>

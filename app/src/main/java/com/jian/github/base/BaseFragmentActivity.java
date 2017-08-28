@@ -7,7 +7,7 @@ import android.support.v4.app.FragmentTransaction;
 import android.text.TextUtils;
 import android.view.View;
 
-import com.ouyangzn.github.R;
+import com.jian.github.R;
 import com.jian.github.utils.Log;
 import com.jian.github.utils.ScreenUtils;
 

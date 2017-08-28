@@ -13,7 +13,7 @@ import com.jian.github.base.BaseFragment;
 import com.jian.github.utils.Actions;
 import com.jian.github.utils.CommonUtils;
 import com.jian.github.utils.ImageLoader;
-import com.ouyangzn.github.R;
+import com.jian.github.R;
 import com.jian.github.base.BasePresenter;
 import com.jian.github.utils.UiUtils;
 
